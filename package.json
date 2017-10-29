@@ -1,8 +1,7 @@
 {
   "name": "oaki",
   "version": "0.0.1",
-  "description":
-    "A tiny front-end framework sorta-kinda like functional React-Redux",
+  "description": "A tiny front-end framework sorta-kinda like functional React-Redux",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
