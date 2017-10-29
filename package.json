@@ -1,8 +1,11 @@
 {
-  "name": "picodux",
-  "version": "0.0.0",
-  "description": "A tiny front-end framework sorta-kinda like Redux React",
-  "main": "index.js",
+  "name": "oaki",
+  "version": "0.0.1",
+  "description":
+    "A tiny front-end framework sorta-kinda like functional React-Redux",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
