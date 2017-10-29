@@ -1,4 +1,4 @@
-export const objMap = (object: { [key: string]: any }, mapper: Mapper) =>
+export const objMap = (object, mapper) =>
   Object.keys(object).reduce(
     (acc, key) => Object.assign(acc, { [key]: mapper(object[key], key) }),
     {}
@@ -12,11 +12,11 @@ export default ({
   introspectors,
   middleware,
   callSubscribers
-}: DuxInternalAPI) => {
+}) => {
   let syncDispatchCount = 0
   let mappedResponders = {}
 
-  const dispatch: Dispatch = action => {
+  const dispatch = action => {
     syncDispatchCount++
 
     const actions = middleware.reduce(

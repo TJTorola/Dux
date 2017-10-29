@@ -1,7 +1,7 @@
 import makeDispatcher from "./dispatch"
 import makeSubscriptionHandler from "./subscriptionHandler"
 
-const createStore: CreateStore = ({
+const createStore = ({
   reducer,
   middleware = [],
   responders = {},
@@ -18,7 +18,7 @@ const createStore: CreateStore = ({
 
   const { subscribe, callSubscribers } = makeSubscriptionHandler(getState)
 
-  const internalAPI: DuxInternalAPI = {
+  const internalAPI = {
     getState,
     setState,
     getReducer,

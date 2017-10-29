@@ -1,15 +1,15 @@
-const makeSubscriptionHandler = (getState: GetState) => {
+const makeSubscriptionHandler = getState => {
   let key = 0
   let subscriptionMap = new Map()
 
-  const subscribe: Subscribe = listener => {
+  const subscribe = listener => {
     const thisKey = key++
     subscriptionMap.set(thisKey, listener)
 
     return () => subscriptionMap.delete(thisKey)
   }
 
-  const callSubscribers: CallSubscribers = () => {
+  const callSubscribers = () => {
     subscriptionMap.forEach(listener => listener(getState()))
   }
 

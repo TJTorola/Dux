@@ -3,29 +3,26 @@ import createStore from "./createStore"
 
 let store
 
-export const createApp: CreateApp = (
+export const createApp = (
   { reducer, middleware, responders, introspectors, view },
   mountNode
 ) => {
-  store = dux.createStore(
-    {
-      reducer,
-      middleware,
-      responders,
-      introspectors
-    },
-    mountNode
-  )
+  store = createStore({
+    reducer,
+    middleware,
+    responders,
+    introspectors
+  })
   let node
 
-  const render = state => {
+  const render = () => {
     const oldNode = node
-    node = view(state)
+    node = view()
     patch(oldNode, node)
   }
 
   store.subscribe(render)
-  render(store.getState())
+  render()
 }
 
 export const connect = (
